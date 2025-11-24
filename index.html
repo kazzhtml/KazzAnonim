@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazzAnonim☯︎ - Pesan Anonymous</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="https://i.top4top.io/p_35701w3nd0.png" alt="KazzAnonim" class="logo">
+                <h1 class="brand-name">KazzAnonim<span class="symbol">☯︎</span></h1>
+            </div>
+            <p class="tagline">Platform Pesan Anonymous</p>
+        </header>
+
+        <main class="main-content">
+            <div class="cta-section">
+                <h2 class="cta-title">Kirim & Terima Pesan <span class="highlight">Anonymous</span></h2>
+                <p class="cta-description">
+                    Ungkapkan perasaanmu tanpa takut diketahui. Pesan otomatis hilang dalam 24 jam.
+                </p>
+                
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="goToRegister()">
+                        <span class="btn-icon">🚀</span>
+                        Mulai Sekarang
+                    </button>
+                    <button class="btn btn-secondary" onclick="goToLogin()">
+                        <span class="btn-icon">🔐</span>
+                        Masuk Ke Dashboard
+                    </button>
+                    <button class="btn btn-music" onclick="toggleMusic()">
+                        <span class="btn-icon">🎵</span>
+                        Putar Musik
+                    </button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🕵️</div>
+                    <h3>100% Anonymous</h3>
+                    <p>Identitas pengirim tetap rahasia</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Auto Delete 24 Jam</h3>
+                    <p>Pesan hilang otomatis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Anti Spam System</h3>
+                    <p>Protection maksimal</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="support-section">
+            <h3>Butuh Bantuan?</h3>
+            <button class="support-btn" onclick="openWAAdmin()">
+                <span class="wa-icon">💬</span>
+                Hubungi Admin WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer class="kazz-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="https://i.top4top.io/p_35701w3nd0.png" alt="KazzAnonim" class="footer-logo">
+                <span class="brand-name">KazzHTML☯︎</span>
+            </div>
+            
+            <div class="wa-portal">
+                <button onclick="openWAAdmin()" class="wa-button">
+                    <span>📱 WhatsApp Admin</span>
+                    <small>Portal Dukungan & Bantuan</small>
+                </button>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 KazzAnonim☯︎ - Platform Pesan Anonymous</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/music.js"></script>
+    <script>
+        function goToRegister() {
+            window.location.href = 'auth/register.html';
+        }
+
+        function goToLogin() {
+            window.location.href = 'auth/login.html';
+        }
+
+        function openWAAdmin() {
+            const phoneNumber = "6281260257063";
+            const defaultMessage = "Halo Min! Saya butuh bantuan untuk KazzAnonim☯︎";
+            const waURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(waURL, '_blank');
+        }
+
+        function toggleMusic() {
+            if (window.musicPlayer) {
+                window.musicPlayer.toggleMusic();
+            }
+        }
+    </script>
+</body>
+</html>

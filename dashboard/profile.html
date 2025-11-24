@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - KazzAnonim☯︎</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <img src="https://i.top4top.io/p_35701w3nd0.png" alt="Logo" class="logo">
+                <h1>Edit Profile</h1>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="goToDashboard()">📊 Dashboard</button>
+                    <button class="btn btn-logout" onclick="logout()">🚪 Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="profile-main">
+            <div class="profile-card">
+                <h2>👤 Edit Profil Anda</h2>
+                
+                <form id="profileForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="profileUsername">Username</label>
+                        <input type="text" id="profileUsername" required>
+                        <small>Username tidak bisa diubah setelah dibuat</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileBio">Bio</label>
+                        <textarea id="profileBio" rows="3" 
+                                  placeholder="Ceritakan sedikit tentang diri Anda..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileAvatar">Foto Profil (URL)</label>
+                        <input type="url" id="profileAvatar" 
+                               placeholder="https://example.com/avatar.jpg">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="goToDashboard()">
+                            ← Kembali
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            💾 Simpan Perubahan
+                        </button>
+                    </div>
+                </form>
+
+                <div class="account-info">
+                    <h3>📊 Informasi Akun</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>User ID:</label>
+                            <span id="userId">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Bergabung sejak:</label>
+                            <span id="joinDate">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Links:</label>
+                            <span id="profileTotalLinks">0</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Pesan:</label>
+                            <span id="profileTotalMessages">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

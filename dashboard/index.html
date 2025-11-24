@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - KazzAnonim☯︎</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <img src="https://i.top4top.io/p_35701w3nd0.png" alt="Logo" class="logo">
+                <h1>KazzAnonim<span>☯︎</span></h1>
+            </div>
+            <div class="header-right">
+                <span id="welcomeUser">Welcome, User!</span>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="goToProfile()">👤 Profile</button>
+                    <button class="btn btn-logout" onclick="logout()">🚪 Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3 id="totalLinks">0</h3>
+                        <p>Total Links</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💌</div>
+                    <div class="stat-info">
+                        <h3 id="totalMessages">0</h3>
+                        <p>Pesan Masuk</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-info">
+                        <h3 id="activeMessages">0</h3>
+                        <p>Pesan Aktif</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="goToCreateLink()">
+                        🎯 Buat Link Baru
+                    </button>
+                    <button class="btn btn-secondary" onclick="viewMessages()">
+                        📨 Lihat Pesan Masuk
+                    </button>
+                    <button class="btn btn-music" onclick="toggleMusic()">
+                        🎵 Putar Musik
+                    </button>
+                </div>
+            </div>
+
+            <div class="recent-links">
+                <div class="section-header">
+                    <h2>Link Anonim Anda</h2>
+                    <button class="btn btn-small" onclick="goToCreateLink()">+ Buat Baru</button>
+                </div>
+                <div id="linksList" class="links-grid">
+                    <div class="loading">Memuat link...</div>
+                </div>
+            </div>
+
+            <div class="messages-preview">
+                <div class="section-header">
+                    <h2>Pesan Terbaru</h2>
+                    <button class="btn btn-small" onclick="viewMessages()">Lihat Semua</button>
+                </div>
+                <div id="messagesPreview" class="messages-list">
+                    <div class="loading">Memuat pesan...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script>
+        function toggleMusic() {
+            if (window.musicPlayer) {
+                window.musicPlayer.toggleMusic();
+            }
+        }
+    </script>
+</body>
+</html>

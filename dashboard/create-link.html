@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Link - KazzAnonim☯︎</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg-animation"></div>
+  
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <div class="header-left">
+        <img src="https://i.top4top.io/p_35701w3nd0.png" alt="Logo" class="logo">
+        <h1>Buat Link Anonim</h1>
+      </div>
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="goToDashboard()">📊 Dashboard</button>
+          <button class="btn btn-logout" onclick="logout()">🚪 Logout</button>
+        </div>
+      </div>
+    </header>
+    
+    <main class="create-link-main">
+      <div class="create-link-card">
+        <h2>🎯 Buat Link Anonim Baru</h2>
+        <p>Buat link unik untuk menerima pesan anonymous</p>
+        
+        <form id="createLinkForm" class="create-link-form">
+          <div class="form-group">
+            <label for="linkTitle">Judul Link</label>
+            <input type="text" id="linkTitle" required placeholder="Contoh: 'Pesan untuk aku' atau 'Kritik & Saran'">
+          </div>
+          
+          <div class="form-group">
+            <label for="customSlug">Custom URL (Optional)</label>
+            <div class="slug-input">
+              <span class="slug-prefix">kazzanonim.vercel.app/m/</span>
+              <input type="text" id="customSlug" placeholder="nama-unik-anda" pattern="[a-zA-Z0-9-_]+">
+            </div>
+            <small>Hanya huruf, angka, dash (-), dan underscore (_)</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="linkPhoto">Foto Custom (Optional)</label>
+            <input type="url" id="linkPhoto" placeholder="https://example.com/photo.jpg">
+            <small>URL foto untuk ditampilkan di halaman pesan</small>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="goToDashboard()">
+              ← Kembali
+            </button>
+            <button type="submit" class="btn btn-primary">
+              🎯 Buat Link
+            </button>
+          </div>
+        </form>
+        
+        <div id="linkPreview" class="link-preview" style="display: none;">
+          <h3>✅ Link Berhasil Dibuat!</h3>
+          <div class="created-link">
+            <p>Link Anonim Anda:</p>
+            <div class="link-url">
+              <input type="text" id="generatedLink" readonly>
+              <button class="btn btn-copy" onclick="copyLink()">📋 Copy</button>
+            </div>
+            <small>Share link ini ke teman-teman untuk menerima pesan anonymous!</small>
+          </div>
+          <div class="preview-actions">
+            <button class="btn btn-primary" onclick="goToDashboard()">
+              🏠 Ke Dashboard
+            </button>
+            <button class="btn btn-secondary" onclick="createAnother()">
+              ➕ Buat Link Lain
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - KazzAnonim☯︎</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg-animation"></div>
+  
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <img src="https://i.top4top.io/p_35701w3nd0.png" alt="Logo" class="auth-logo">
+        <h1>Daftar Akun Baru</h1>
+        <p>Buat akun KazzAnonim☯︎ mu</p>
+      </div>
+      
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required placeholder="Pilih username unik">
+          <div class="error-message" id="usernameError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Minimal 6 karakter">
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Konfirmasi Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Ulangi password">
+          <div class="error-message" id="confirmPasswordError"></div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary auth-btn">
+          🚀 Buat Akun
+        </button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>Sudah punya akun? <a href="login.html" class="auth-link">Masuk di sini</a></p>
+      </div>
+      
+      <div class="back-home">
+        <a href="../index.html" class="back-link">← Kembali ke Home</a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+
+</html>

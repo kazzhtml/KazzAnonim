@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KazzAnonim☯︎</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="https://i.top4top.io/p_35701w3nd0.png" alt="Logo" class="auth-logo">
+                <h1>Masuk ke Akun</h1>
+                <p>Selamat datang kembali!</p>
+            </div>
+
+            <div id="loginWarning" class="warning-message" style="display: none;">
+                ⚠️ Percobaan login gagal: <span id="attemptCount">0</span>/3
+            </div>
+
+            <div id="blockedMessage" class="error-message" style="display: none;">
+                ❌ Akun diblokir sementara. Coba lagi dalam <span id="blockTime">60</span> menit.
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" name="username" required 
+                           placeholder="Masukkan username">
+                    <div class="error-message" id="loginUsernameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required 
+                           placeholder="Masukkan password">
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-btn" id="loginBtn">
+                    🔐 Masuk
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Belum punya akun? <a href="register.html" class="auth-link">Daftar di sini</a></p>
+            </div>
+
+            <div class="auth-support">
+                <button onclick="openWAAdmin()" class="support-btn">
+                    💬 Butuh Bantuan? WhatsApp Admin
+                </button>
+            </div>
+
+            <div class="back-home">
+                <a href="../index.html" class="back-link">← Kembali ke Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        function openWAAdmin() {
+            const phoneNumber = "6281260257063";
+            const message = "Halo Min! Saya butuh bantuan login KazzAnonim☯︎";
+            const waURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waURL, '_blank');
+        }
+    </script>
+</body>
+</html>

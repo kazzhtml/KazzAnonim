@@ -1,6 +1,6 @@
 // Supabase Configuration untuk SPCK Editor
-const SUPABASE_URL = 'https://rcaeavjbnjqaqaybjgxe.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjYWVhdmpibmpxYXFheWJqZ3hlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjQ5MTEsImV4cCI6MjA3OTQwMDkxMX0.eQ9D2fLUIsTZXX8KKsIjVbHGiRYBjPK58LpgggBTlEs';
+const SUPABASE_URL = 'https://rqkcozaleykjuhfoyjpq.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxa2NvemFsZXlranVoZm95anBxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyMTA4MTIsImV4cCI6MjA4MDc4NjgxMn0.DRTuLHBWbhPRoCnaPTyWvkQzabpHubmd4A3qM28eOnA';
 
 // Global Supabase client (untuk compatibility SPCK)
 let supabase;
